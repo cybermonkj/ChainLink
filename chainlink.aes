@@ -28,23 +28,23 @@ payable contract Register =
         
 
 
-    stateful entrypoint register(newName:s, newEmail :s, newPrice :i, newWork :s, newHours : i, newCompany : s, newCv : s, newPhone : i) = 
-        let newUser = {
+    stateful entrypoint register(chainName:s, chainEmail :s, chainExpectedSalary :i, chainJobtype :s, chainWorkingHours : i, chainCompany : s, chainJobsample : s, chainPhone : i) = 
+        let newChain = {
         
-            email = newEmail,
-            price = newPrice,
-            hours = newHours,
-            cv = newCv,
+            email = chainEmail,
+            price = chainExpectedSalary,
+            hours = chainWorkingHours,
+            cv = chainJobsample,
             hired = 0,
-            name = newName,
-            phone = newPhone,
-            work = newWork,
-            company = newCompany,
+            name = chainName,
+            phone = chainPhone,
+            work = chainJobtype,
+            company = chainCompany,
             id = userLength() + 1,
             ownerAddress = Call.caller}
         let index = userLength() +1
 
-        put(state{chainees[index] = newUser, userLength = index})
+        put(state{chainees[index] = newChain, userLength = index})
 
         "New chainee Added to ChainLink"
 

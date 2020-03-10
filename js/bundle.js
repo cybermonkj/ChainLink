@@ -2080,23 +2080,23 @@ payable contract Register =
         
 
 
-    stateful entrypoint register(newName:s, newEmail :s, newPrice :i, newWork :s, newHours : i, newCompany : s, newCv : s, newPhone : i) = 
-        let newUser = {
-            name = newName,
-            phone = newPhone,
-            work = newWork,
-            company = newCompany,
-            email = newEmail,
-            price = newPrice,
-            hours = newHours,
-            cv = newCv,
+    stateful entrypoint register(chainName:s, chainEmail :s, chainExpectedSalary :i, chainJobtype :s, chainWorkingHours : i, chainCompany : s, chainJobsample : s, chainPhone : i) = 
+        let newChain = {
+            name = chainName,
+            phone = chainPhone,
+            work = chainJobtype,
+            company = chainCompany,
+            email = chainEmail,
+            price = chainExpectedSalary,
+            hours = chainWorkingHours,
+            cv = chainJobsample,
             hired = 0,
 
             id = userLength() + 1,
             ownerAddress = Call.caller}
         let index = userLength() +1
 
-        put(state{chainees[index] = newUser, userLength = index})
+        put(state{chainees[index] = newChain, userLength = index})
 
         "New chainee Added to ChainLink"
 
@@ -2254,19 +2254,19 @@ async function uploadFile(file) {
 $('#submitBtn').click(async function () {
   $("#loadings").show();
 
-  var name = ($('#newName').val()),
+  var name = ($('#chainName').val()),
   
-  phone = ($('#newPhone').val()),
+  phone = ($('#chainPhone').val()),
 
-  price = ($('#newPrice').val());
+  price = ($('#chainExpectedSalary').val());
 
-  email = ($('#newEmail').val());
+  email = ($('#chainEmail').val());
 
-  company = ($('#newCompany').val());
+  company = ($('#chainCompany').val());
 
-  hours = ($('#newHours').val());
+  hours = ($('#chainWorkingHours').val());
 
-  work = ($('#newWork').val());
+  work = ($('#chainJobtype').val());
 
   // image = ($('#image').val());
 
