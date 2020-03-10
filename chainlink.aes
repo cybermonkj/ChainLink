@@ -4,7 +4,7 @@ payable contract Register =
     record chainee = {
         email : s,
         phone : i,
-        cv : s,
+        jobSample : s,
         hired : int,
         ownerAddress : a,
         id : i,
@@ -34,7 +34,7 @@ payable contract Register =
             email = chainEmail,
             price = chainExpectedSalary,
             hours = chainWorkingHours,
-            cv = chainJobsample,
+            jobSample = chainJobsample,
             hired = 0,
             name = chainName,
             phone = chainPhone,

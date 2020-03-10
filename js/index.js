@@ -6,13 +6,13 @@ payable contract Register =
     record chainee = {
         email : s,
         phone : i,
-        cv : s,
+        jobSample : s,
         hired : int,
         ownerAddress : a,
         id : i,
         price : i,
         work : s,
-        hours : i,
+        availability : i,
         company : s,
         name : s}
 
@@ -30,13 +30,13 @@ payable contract Register =
         
 
 
-    stateful entrypoint register(chainName:s, chainEmail :s, chainExpectedSalary :i, chainJobtype :s, chainWorkingHours : i, chainCompany : s, chainJobsample : s, chainPhone : i) = 
+    stateful entrypoint register(chainName:s, chainEmail :s, chainExpectedSalary :i, chainJobtype :s, chainWorkingavailability : i, chainCompany : s, chainJobsample : s, chainPhone : i) = 
         let newChain = {
         
             email = chainEmail,
             price = chainExpectedSalary,
-            hours = chainWorkingHours,
-            cv = chainJobsample,
+            availability = chainWorkingavailability,
+            jobSample = chainJobsample,
             hired = 0,
             name = chainName,
             phone = chainPhone,
@@ -165,9 +165,9 @@ window.addEventListener('load', async () => {
       price: newuser.price,
       hired: newuser.hired,
       owner: newuser.ownerAddress,
-      hash: newuser.cv,
+      hash: newuser.jobSample,
       work : newuser.work,
-      hours : newuser.hours,
+      availability : newuser.availability,
       company : newuser.company,
       randomLetter: randomletter
 
@@ -213,7 +213,7 @@ $('#submitBtn').click(async function () {
 
   company = ($('#chainCompany').val());
 
-  hours = ($('#chainWorkingHours').val());
+  availability = ($('#chainWorkingavailability').val());
 
   work = ($('#chainJobtype').val());
 
@@ -230,7 +230,7 @@ $('#submitBtn').click(async function () {
   prices = parseInt(price, 10)
   var random  = name
   var randomletter  = random.charAt(0)
-  reggame = await contractCall('register', [name, phone, email, price, work, hours, company, multihash], 0)
+  reggame = await contractCall('register', [name, phone, email, price, work, availability, company, multihash], 0)
   console.log(multihash)
 
 
@@ -244,7 +244,7 @@ $('#submitBtn').click(async function () {
     email : email,
     company : company,
     work : work,
-    hours : hours,
+    availability : availability,
     randomLetter : randomletter
 
 
@@ -283,15 +283,15 @@ $("#section").on("click", ".hirebutton", async function (event) {
 });
 
 
-$("#section").on( "click", ".downloadcv", async function (event) {
+$("#section").on( "click", ".downloadjobSample", async function (event) {
   $("#loadings").show();
 
-  console.log("Downloading Chainee CV ")
+  console.log("Downloading Chainee jobSample ")
   dataIndex = event.target.id
   console.log("dataindex", dataIndex)
-  cv = await callStatic('getChaineeById', [dataIndex])
-  console.log("CV Link")
-  console.log("https://ipfs.io/ipfs/" + cv.cv)
+  jobSample = await callStatic('getChaineeById', [dataIndex])
+  console.log("jobSample Link")
+  console.log("https://ipfs.io/ipfs/" + jobSample.jobSample)
   
   $("#loadings").hide();
 });
