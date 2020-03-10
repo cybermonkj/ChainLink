@@ -2272,7 +2272,7 @@ $('#submitBtn').click(async function () {
 
   // gets the uploaded file
 
-  newfile = document.getElementById('addedFile')
+  newfile = document.getElementById('chainSamplezip')
 
 
   console.log(newfile)

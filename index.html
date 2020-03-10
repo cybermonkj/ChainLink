@@ -124,15 +124,101 @@
       
                       <div class="container">
                         <form>
-
+                          <div class="name">Full name</div>
+                          <div class="value">
+                            <input
+                              id="chainName"
+                              class="input--style-6"
+                              type="text"
+                              name="full_name"
+                              placeholder="Name"
+                            />
+                          </div>
+                        
+                        <div class="form-row">
+                          <div class="name">Email address</div>
+                          <div class="value">
+                            <div class="input-group">
+                              <input
+                                id="chainEmail"
+                                class="input--style-6"
+                                type="email"
+                                name="email"
+                                placeholder="example@email.com"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        
+          
+                        <div class="form-row">
+                          <div class="name">Expected Salary</div>
+                          <div class="value">
+                            <div class="input-group">
+                              <input
+                                id="chainExpectedSalary"
+                                class="input--style-6"
+                                type="number"
+                                name="chainExpectedSalary"
+                                placeholder="1234"
+                              />
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="form-row">
+                            <div class="name">Companies you have worked for. If none write "none"</div>
+                            <div class="value">
+                              <div class="input-group">
+                                <input
+                                  id="chainCompany"
+                                  class="input--style-6"
+                                  type="text"
+                                  name="chainCompany"
+                                  placeholder="Aeternity"
+                                />
+                              </div>
+                            </div>
+                          </div>
+          
+                          <div class="form-row">
+                              <div class="name">Your Occupation</div>
+                              <div class="value">
+                                <div class="input-group">
+                                  <input
+                                    id="chainJobtype"
+                                    class="input--style-6"
+                                    type="text"
+                                    name="chainJobtype"
+                                    placeholder="Web Developer"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+          
+                          <div class="form-row">
+                              <div class="name">How many hours can you work per day</div>
+                              <div class="value">
+                                <div class="input-group">
+                                  <input
+                                    id="chainWorkingHours"
+                                    class="input--style-6"
+                                    type="number"
+                                    name="chainWorkingHours"
+                                    placeholder="1234"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+    
 
                         </form>
                       </div>
 
 
               
-                      <div class="name">Upload CV as Zip</div>
-                      <input type="file"  id="addedFile" style="border: solid 1px blue">
+                      <div class="name">Upload Your Job Sample as Zip</div>
+                      <input type="file"  id="chainSamplezip" style="border: solid 1px blue">
                      
                   <div class="card-footer">
                     <button style="color: blue;" class="btn btn--radius-2 btn--blue-2" id="submitBtn">

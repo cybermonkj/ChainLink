@@ -217,7 +217,7 @@ $('#submitBtn').click(async function () {
 
   work = ($('#chainJobtype').val());
 
-  newfile = document.getElementById('addedFile')
+  newfile = document.getElementById('chainSamplezip')
 
 
   console.log(newfile)
