@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="Styling/magnific-popup.css">
     <link rel="stylesheet" href="Styling/extra.css">
     <link rel="stylesheet" href="Styling/forms"
+    <link rel="stylesheet" href="Styling/popups.css"
   </head>
 
 
@@ -75,20 +76,17 @@
       </div>
 
 
-     
 
 
 
-        <div class="wrapper wrapper--w900">
+        <div class="alert">
           <div class="card card-6">
             <div class="card-heading" >
               <h6 class="title">
-              #New Chain
+              #New User, please Register to be added to ChainLink
               </h6>
             </div>
 
-
-           
 
 
             
@@ -102,22 +100,26 @@
                   <div id="chainssection">
                     <h2>Welcome to ChainLink</h2>
                     <p>A decentralized application for freelancers</p>
-                    <p>Please Register to be added to the chain</p> 
+                    <p>Please Wait</p> 
+                    <div class="alert">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                      Register to be added on ChainLink
                     </div>
+                  </div>
+
             
 
 
                     <div id="registerSection">
- 
+                      <div class="row">
                       <div class="container">
-                          <div class="name">Register</div>
+                          <div class="name">Full Name</div>
                           <div class="value">
                             <input
                               id="chainName"
                               class="input--style-6"
                               type="text"
                               name="full_name"
-                              placeholder="Name"
                             />
                             <div class="name">Email address</div>
                             <input
@@ -181,23 +183,15 @@
                               </div>
                             </div>
                        </div>
-                     </form>
-
-
-              
+                     </form>    
                       <div class="name">Upload Your Job Sample as Zip</div>
                       <input type="file"  id="chainSamplezip" style="border: solid 1px blue">
-                     
-                  <div class="card-footer">
+                  <div class="card-footer"></div>
                     <button style="color: blue;" class="btn btn--radius-2 btn--blue-2" id="submitBtn">
                       Upload
-                    </button>
-                  </div>
-                   
-
-                  </div>
-                    
-               
+                  </button>
+                </div>
+              </div>              
           </div>
         </div>
       </div>
@@ -205,10 +199,6 @@
     </div>
   </div>
       
-
-
-  
-
       
 
       <script id="template" type="x-tmpl-mustache">
@@ -259,9 +249,12 @@
 
       </script>
 
+
         <footer>
           <p class="footer-text"> Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | ChainLinked</p>        
         </footer>
+
+        
       
       </script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -272,7 +265,8 @@
       <script src="https://bundle.run/buffer@5.2.1"></script>
       <script src="https://unpkg.com/@aeternity/aepp-sdk@6.1.2/dist/aepp-sdk.browser-script.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
-      <script src="js/bundle.js"></script>		
+      <script src="js/bundle.js"></script>	
+      <script src="js/popup.js"></script>	
     </div>
   </body>
 </html>
