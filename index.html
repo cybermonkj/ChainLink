@@ -15,17 +15,19 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet" media="all" />
-    <link rel="stylesheet" href="css/scroll.css" />
-    <link rel="stylesheet" href="css/hirebtn.css" />
-    <link rel="stylesheet" href="css/loading.css" />
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">				
-    <link rel="stylesheet" href="css/nice-select.css">							
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">	
-    <link rel="stylesheet" href="css/extra.css">	
+    <link rel="stylesheet" href="Styling/linearicons.css">
+    <link rel="stylesheet" href="Styling/magnific-popup.css">>				
+    <link rel="stylesheet" href="Styling/nice-select.css">							
+    <link rel="stylesheet" href="Styling/animate.min.css">
+    <link rel="stylesheet" href="Styling/owl.carousel.css">	
+    <link rel="stylesheet" href="Styling/scroll.css" />
+    <link rel="stylesheet" href="Styling/hirebtn.css" />
+    <link rel="stylesheet" href="Styling/loading.css" />
+    <link rel="stylesheet" href="Styling/main.css">
+    <link rel="stylesheet" href="Styling/linearicons.css">
+    <link rel="stylesheet" href="Styling/magnific-popup.css">
+    <link rel="stylesheet" href="Styling/extra.css">
+    <link rel="stylesheet" href="Styling/forms"
   </head>
 
 
@@ -64,14 +66,8 @@
       </div>
     </header>
 
-
-
-
-
-
-
   <body>
-    <div id="scrollbar">
+    <div id="scroll">
 
 
       <div id="loadings">
@@ -102,29 +98,19 @@
                   <hr style="color: blue;">
 
 
-                
+                  <form>
                   <div id="chainssection">
                     <h2>Welcome to ChainLink</h2>
                     <p>A decentralized application for freelancers</p>
-                    <p>Please Register to be added to the chain</p>
-      
-       
+                    <p>Please Register to be added to the chain</p> 
                     </div>
-                    <br>
-                    <br>
-                    <hr style="color: blue;">
+            
 
 
                     <div id="registerSection">
-                      <h2></h2>
-                      <br>
-                      <br>
-      
-                      
-      
+ 
                       <div class="container">
-                        <form>
-                          <div class="name">Full name</div>
+                          <div class="name">Register</div>
                           <div class="value">
                             <input
                               id="chainName"
@@ -133,25 +119,28 @@
                               name="full_name"
                               placeholder="Name"
                             />
-                          </div>
-                        
-                        <div class="form-row">
-                          <div class="name">Email address</div>
+                            <div class="name">Email address</div>
+                            <input
+                            id="chainEmail"
+                            class="input--style-6"
+                            type="email"
+                            name="email"
+                            placeholder="Active Email address"
+                          />
+
+                          <div class="name"> Previous Enployer</div>
                           <div class="value">
                             <div class="input-group">
                               <input
-                                id="chainEmail"
+                                id="chainCompany"
                                 class="input--style-6"
-                                type="email"
-                                name="email"
-                                placeholder="example@email.com"
+                                type="text"
+                                name="chainCompany"
+                                placeholder="Previous Employer"
                               />
-                            </div>
                           </div>
                         </div>
-                        
           
-                        <div class="form-row">
                           <div class="name">Expected Salary</div>
                           <div class="value">
                             <div class="input-group">
@@ -164,25 +153,8 @@
                               />
                             </div>
                           </div>
-                        </div>
           
-                        <div class="form-row">
-                            <div class="name">Companies you have worked for. If none write "none"</div>
-                            <div class="value">
-                              <div class="input-group">
-                                <input
-                                  id="chainCompany"
-                                  class="input--style-6"
-                                  type="text"
-                                  name="chainCompany"
-                                  placeholder="Aeternity"
-                                />
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="form-row">
-                              <div class="name">Your Occupation</div>
+                          <div class="name">Your Occupation</div>
                               <div class="value">
                                 <div class="input-group">
                                   <input
@@ -194,10 +166,8 @@
                                   />
                                 </div>
                               </div>
-                            </div>
-          
-                          <div class="form-row">
-                              <div class="name">How many hours can you work per day</div>
+
+                          <div class="name">Working Days</div>
                               <div class="value">
                                 <div class="input-group">
                                   <input
@@ -205,15 +175,13 @@
                                     class="input--style-6"
                                     type="number"
                                     name="chainWorkingHours"
-                                    placeholder="1234"
+                                    placeholder="Friday"
                                   />
                                 </div>
                               </div>
                             </div>
-    
-
-                        </form>
-                      </div>
+                       </div>
+                     </form>
 
 
               
@@ -244,7 +212,8 @@
       
 
       <script id="template" type="x-tmpl-mustache">
-         {{#chainArray}}
+        
+        {{#chainArray}}
          <hr style="color: blue;">
          <div>
             <link rel="stylesheet" href="../css/build.css" />
@@ -263,7 +232,7 @@
               <div class="Box-row">
             <ul class="lead ml-4 mb-0">
               <li><b>
-              {{price }} aettos per month as</b> salary</li>
+              {{price }} aettos per Job as</b> Expected Salary</li>
               Previous company : {{company}}</li>
             <li>
               <b>{{email}}</b> is My Email </li>
@@ -287,6 +256,7 @@
          </div>
          <hr style="color: blue;">
         {{/chainArray}}
+
       </script>
 
         <footer>
@@ -302,11 +272,7 @@
       <script src="https://bundle.run/buffer@5.2.1"></script>
       <script src="https://unpkg.com/@aeternity/aepp-sdk@6.1.2/dist/aepp-sdk.browser-script.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
-      <script src="js/bundle.js"></script>
-			<script src="js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="js/popper.min.js"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
+      <script src="js/bundle.js"></script>		
     </div>
   </body>
 </html>
