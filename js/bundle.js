@@ -15,8 +15,6 @@ for (var i = 0, len = code.length; i < len; ++i) {
   revLookup[code.charCodeAt(i)] = i
 }
 
-// Support decoding URL-safe base64 strings, as Node.js does.
-// See: https://en.wikipedia.org/wiki/Base64#URL_applications
 revLookup['-'.charCodeAt(0)] = 62
 revLookup['_'.charCodeAt(0)] = 63
 
@@ -39,7 +37,6 @@ function getLens (b64) {
   return [validLen, placeHoldersLen]
 }
 
-// base64 is 4/3 + up to two characters of the original data
 function byteLength (b64) {
   var lens = getLens(b64)
   var validLen = lens[0]
@@ -2162,11 +2159,6 @@ async function contractCall(func, args, value) {
 }
 
 
-
-// test
-
-
-
 document.addEventListener('DOMContentLoaded', async () => {
 
   $("#loadings").show();
@@ -2228,10 +2220,9 @@ window.addEventListener('load', async () => {
 
 
 
-// This connects youtopublic ipfs gateway
+// This connects youtopublic ipfs gateway 
 const ipfs = window.IpfsHttpClient('ipfs.infura.io', '5001', { protocol: 'https' });
 
-// Converts the uploaded file to a buffer which is required to upload to an ipfs node
 async function uploadFile(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -2250,7 +2241,7 @@ async function uploadFile(file) {
 
 
 
-// Register User
+// Submit User
 $('#submitBtn').click(async function () {
   $("#loadings").show();
 
@@ -2315,12 +2306,6 @@ $('#submitBtn').click(async function () {
 
 
 
-
-
-
-
-
-
 $("#section").on("click", ".hirebutton", async function (event) {
   $("#loadings").show();
   console.log("Hiring Worker")
@@ -2363,7 +2348,6 @@ $("#section").on( "click", ".downloadcv", async function (event) {
   $("#loadings").hide();
 });
 
-// Show the Register form
 
 $('#registerLink').click( function(event){
   console.log("Showing register form")
@@ -2381,7 +2365,6 @@ $('#userLink').click( function(event){
 
 })
 
-// Go back to the default page
 $('#homeLink').click( function(event){
   console.log("Showing home")
 
